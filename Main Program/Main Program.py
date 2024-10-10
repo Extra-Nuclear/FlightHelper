@@ -42,7 +42,7 @@ while run == True:
         elif choice == 2:
             print(f"{DEPARTURE} Delivery, good day, {CALLSIGN} at stand {STAND}, with information {INFO}, requesting clearance to {ARRIVAL}")
             SID = input("DEPARTURE SID = ")
-            RUNWAY = int(input("RUNWAY = "))
+            RUNWAY = (input("RUNWAY = "))
             SQUAWK = int(input("SQUAWK = "))
             input("---PRESS--ENTER--TO--CONTINUE---")
             print(f"Cleared to {ARRIVAL}, {SID} departure, runway {RUNWAY}, squawk {SQUAWK}, {CALLSIGN}")
