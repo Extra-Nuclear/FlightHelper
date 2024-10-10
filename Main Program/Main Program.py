@@ -41,7 +41,7 @@ while run == True:
         elif choice == 2:
             print(f"{DEPARTURE} Delivery, good day, {CALLSIGN} at stand {STAND}, with information {INFO}, requesting clearance to {ARRIVAL}")
             SID = input("DEPARTURE SID = ")
-            RUNWAY = (input("RUNWAY = "))
+            RUNWAY = (input("RUNWAY = ")).upper()
             SQUAWK = float(input("SQUAWK = "))
             input("---PRESS--ENTER--TO--CONTINUE---")
             print(f"Cleared to {ARRIVAL}, {SID} departure, runway {RUNWAY}, squawk {SQUAWK}, {CALLSIGN}")
@@ -53,6 +53,8 @@ while run == True:
 
         elif choice == 3:
             stage = "Push & Start"
+
+
     while stage == "Push & Start":
 
         print("/n")
@@ -63,7 +65,15 @@ while run == True:
         print (f"Startup and pushback approved {CALLSIGN}")
         input("---PRESS--ENTER--TO--CONTINUE---")
         stage == "Taxi"
-        break
+
+    while stage == "Taxi":
+        print(f"{CALLSIGN}, Request Taxi")
+        input("ROUTE: ")
+        print (f"{CALLSIGN} Taxi Holding point Runway {RUNWAY}")
+
+        
+    
+
  
 
 
