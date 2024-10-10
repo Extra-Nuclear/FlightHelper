@@ -9,4 +9,3 @@ while run == True:
     print("Select an option bellow:")
     run = False
 
-
