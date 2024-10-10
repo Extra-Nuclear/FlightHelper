@@ -64,12 +64,14 @@ while run == True:
         print (f"{DEPARTURE} Ground, Good day, {CALLSIGN} ready for pushback and startup")
         print (f"Startup and pushback approved {CALLSIGN}")
         input("---PRESS--ENTER--TO--CONTINUE---")
-        stage == "Taxi"
+        stage = "Taxi"
 
     while stage == "Taxi":
         print(f"{CALLSIGN}, Request Taxi")
-        input("ROUTE: ")
-        print (f"{CALLSIGN} Taxi Holding point Runway {RUNWAY}")
+        ROUTE = input("ROUTE: ")
+        print (f" Taxi Holding point Runway {RUNWAY} {ROUTE} {CALLSIGN}")
+        input("---PRESS--ENTER--TO--CONTINUE---")
+        stage = "Line up and Takeoff"
 
         
     
