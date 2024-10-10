@@ -37,7 +37,7 @@ while run == True:
 
 
         elif choice == 2:
-            pass
+            print(f"{DEPARTURE} Delivery, good day, {CALLSIGN} at stand {STAND}, with information {INFO}, requesting clearance to {ARRIVAL}")
 
         elif choice == 3:
             stage = "Push & Start"
