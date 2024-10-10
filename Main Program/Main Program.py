@@ -41,6 +41,5 @@ while run == True:
 
         elif choice == 3:
             stage = "Push & Start"
-        elif choice ==3:
     run = False
 
