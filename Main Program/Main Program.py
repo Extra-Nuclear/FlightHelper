@@ -5,6 +5,7 @@ import os
 run = True
 stage = "Clearance"
 
+
 #Start
 
 print("""
@@ -35,10 +36,11 @@ while run == True:
             INFO = input("ATIS INFO = ")
 
 
-        if choice == 2:
+        elif choice == 2:
             pass
 
-        if choice == 3:
+        elif choice == 3:
             stage = "Push & Start"
+        elif choice ==3:
     run = False
 
