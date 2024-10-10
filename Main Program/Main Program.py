@@ -34,6 +34,7 @@ while run == True:
             DEPARTURE = input("DEPARTURE = ")
             ARRIVAL = input("ARRIVAL = ")
             INFO = input("ATIS INFO = ")
+            GROUNDFRQ = input("GROUND FREQUENCY")
 
 
         elif choice == 2:
@@ -41,5 +42,17 @@ while run == True:
 
         elif choice == 3:
             stage = "Push & Start"
+    while stage == "Push & Start":
+
+        print (f"{CALLSIGN} Information {INFO} Contact Ground on {GROUNDFRQ} ")
+
+
+
+
+
+
+
+
     run = False
+
 
