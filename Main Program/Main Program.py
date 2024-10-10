@@ -34,16 +34,15 @@ while run == True:
             DEPARTURE = input("DEPARTURE = ").upper()
             ARRIVAL = input("ARRIVAL = ").upper()
             INFO = input("ATIS INFO = ").upper()
-            print(f"\n")
-            print("F̲r̲e̲q̲u̲e̲n̲c̲i̲e̲s̲: ")
-            GROUNDFRQ = input("GROUND FREQUENCY").upper()
+            
+           
 
 
         elif choice == 2:
             print(f"{DEPARTURE} Delivery, good day, {CALLSIGN} at stand {STAND}, with information {INFO}, requesting clearance to {ARRIVAL}")
             SID = input("DEPARTURE SID = ")
             RUNWAY = (input("RUNWAY = "))
-            SQUAWK = int(input("SQUAWK = "))
+            SQUAWK = float(input("SQUAWK = "))
             input("---PRESS--ENTER--TO--CONTINUE---")
             print(f"Cleared to {ARRIVAL}, {SID} departure, runway {RUNWAY}, squawk {SQUAWK}, {CALLSIGN}")
             print("(1) Readback Correct")
@@ -56,7 +55,17 @@ while run == True:
             stage = "Push & Start"
     while stage == "Push & Start":
 
-        print (f"{CALLSIGN} Information {INFO} Contact Ground on {GROUNDFRQ} ")
+        print("/n")
+        print (f"{CALLSIGN}, Fully ready")
+        GROUNDFRQ = input("GROUND FREQUENCY").upper()
+        print("(Switch to Ground Frequency)")
+        print (f"{DEPARTURE} Ground, Good day, {CALLSIGN} ready for pushback and startup")
+        print (f"Startup and pushback approved {CALLSIGN}")
+        input("---PRESS--ENTER--TO--CONTINUE---")
+        stage == "Taxi"
+        break
+ 
+
 
 
 
