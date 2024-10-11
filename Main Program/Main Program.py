@@ -104,14 +104,28 @@ while run == True:
         #switch to tower [O]
         print(f"Switch to {TOWERFRQ}")
         input("---PRESS--ENTER--TO--CONTINUE---")
+
+
         #give them time to chaange [O]
         print(f"{DEPARTURE} Tower, Good day {CALLSIGN} at {HOLDINGPOINT}")
         print(f"Line up and wait Runway {RUNWAY} {CALLSIGN}")
         input("---PRESS--ENTER--TO--CONTINUE---")
-        print(f"Cleared For take of Runway {RUNWAY} {CALLSIGN}")
-        
 
-        
+        print(f"Cleared For take of Runway {RUNWAY} {CALLSIGN}")
+        input("---PRESS--ENTER--TO--CONTINUE---")
+
+        stage = "Depature and climbing on the SID"
+    while stage == "Depature and climbing on the SID":
+        os.system ("cls")
+        FL = ("Flight level = ")
+        print(f"{DEPARTURE} Aporoch  Good day {CALLSIGN} {SID} passing FL{FL}")
+        TARGETFL = ("TARGET FL")
+        print (f"Climb FL{TARGETFL} {CALLSIGN}")
+        RADARST = input("REGION RADAR = ")
+        RADARFRQ = input("RADAR FREQUENCY = ")
+        input("---PRESS--ENTER--TO--CONTINUE---")
+
+
     
 
  
