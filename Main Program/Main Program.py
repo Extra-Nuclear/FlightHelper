@@ -34,6 +34,7 @@ while run == True:
             ARRIVAL = input("ARRIVAL = ").upper()
             INFO = input("ATIS INFO = ").upper()
             #I have put freqencys in when the ACT gives them to the pilot O
+            os.system("cls")
            
 
 
@@ -49,7 +50,7 @@ while run == True:
             while mini_choice != 1:
                 print("(1) Readback Correct")
                 print("(2) Change Something")
-                mini_choice = int(input("= "))
+                mini_choice = int(input("-> "))
                 if mini_choice == 2:
                     SID = input("DEPARTURE SID = ")
                     RUNWAY = (input("RUNWAY = ")).upper()
@@ -67,7 +68,7 @@ while run == True:
         print (f"{CALLSIGN}, Fully ready")
         QNH = input("QNH = ")
         GROUNDFRQ = input("GROUND FREQUENCY = ")
-        print(F"QNH {QNH}, information {INFO}, Ground on {GROUNDFRQ}, {CALLSIGN}")
+        print(f"QNH {QNH}, information {INFO}, Ground on {GROUNDFRQ}, {CALLSIGN}")
         print("(Switch to Ground Frequency)")
         input("---PRESS--ENTER--TO--CONTINUE---")
         print (f"{DEPARTURE} Ground, Good day, {CALLSIGN} at stand {STAND}, ready for pushback and startup")
@@ -80,7 +81,7 @@ while run == True:
                 print (f"Startup and pushback approved, facing {PSH_DREC}, {CALLSIGN}")
                 push_done = True
             if mini_choice == 1:
-                print (f"Startup and pushback approved {CALLSIGN}")
+                print (f"Startup and pushback approved, {CALLSIGN}")
                 push_done = True
         input("---PRESS--ENTER--TO--CONTINUE---")
         stage = "Taxi"
@@ -94,7 +95,6 @@ while run == True:
         # the holding point [C]
         input("---PRESS--ENTER--TO--CONTINUE---")
         stage = "Line up and Takeoff"
-
 
     while stage == "Line up and Takeoff":
         TOWERFRQ = input("TOWER FREQUENCY = ")
