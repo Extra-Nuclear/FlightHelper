@@ -109,13 +109,8 @@ while run == True:
         print(f"{DEPARTURE} Tower, Good day {CALLSIGN} at {HOLDINGPOINT}")
         print(f"Line up and wait Runway {RUNWAY} {CALLSIGN}")
         input("---PRESS--ENTER--TO--CONTINUE---")
-<<<<<<< HEAD
-=======
         print(f"Cleared For take of Runway {RUNWAY} {CALLSIGN}")
- 
->>>>>>> d393abaa76e8ec2f0de48bc9ccb530c43beb9caa
 
-        print(f"Cleared For take of Runway {RUNWAY} {CALLSIGN}")
         input("---PRESS--ENTER--TO--CONTINUE---")
 
         stage = "Depature and climbing on the SID"
