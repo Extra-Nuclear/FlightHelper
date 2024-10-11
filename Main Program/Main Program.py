@@ -2,10 +2,14 @@
 import os
 
 #Variables:
+
 run = True
 stage = "Clearance"
-FLIGHT_PLAN = []
+FLIGHT_PLAN = ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",]
 FLIGHT_PLAN_INDEX = 1
+FLIGHT_PLAN_MAX = 1
+NUMBER = 1
+FLIGHT_PLAN_TEMP = ""
 
 #Start
 
@@ -31,6 +35,12 @@ while run == True:
         os.system("cls")
 
         if choice == 1:
+            FLIGHT_PLAN_MAX = int(input("FLIGHT PLAN MAX VALUES = "))
+            for i in range(FLIGHT_PLAN_MAX):
+                FLIGHT_PLAN_TEMP = input(f"FLIGHT PLAN VALUE {NUMBER} = ").upper()
+                FLIGHT_PLAN[NUMBER - 1] = FLIGHT_PLAN_TEMP
+                NUMBER = NUMBER + 1
+            os.system("cls")
             CALLSIGN = input("CALLSIGN = ").upper()
             STAND = input("STAND = ").upper()
             DEPARTURE = input("DEPARTURE = ").upper()
@@ -146,7 +156,7 @@ while run == True:
         os.system ("cls")
         FL = ("Flight level = ").upper()
         print("")
-        print(f"{DEPARTURE} Aporoch, Good day, {CALLSIGN}, {SID} departure, passing FL{FL}")
+        print(f"{DEPARTURE} Aproach, Good day, {CALLSIGN}, {SID} departure, passing FL{FL}")
         print("")
         TARGETFL = ("CLIMB TO FL = ")
         print("")
