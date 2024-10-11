@@ -1,14 +1,16 @@
 #Import
 import os
+import time
 
 #Variables:
 
 run = True
 stage = "Clearance"
-FLIGHT_PLAN = ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",]
-FLIGHT_PLAN_INDEX = 1
+FLIGHT_PLAN = ["","","","","","","","","","","","","","",""]
+FLIGHT_PLAN_INDEX = 0
+GLOBAL_FLIGHT_PLAN_INDEX = 0
 FLIGHT_PLAN_MAX = 1
-NUMBER = 1
+NUMBER = 0
 FLIGHT_PLAN_TEMP = ""
 
 #Start
@@ -38,8 +40,12 @@ while run == True:
             FLIGHT_PLAN_MAX = int(input("FLIGHT PLAN MAX VALUES = "))
             for i in range(FLIGHT_PLAN_MAX):
                 FLIGHT_PLAN_TEMP = input(f"FLIGHT PLAN VALUE {NUMBER} = ").upper()
-                FLIGHT_PLAN[NUMBER - 1] = FLIGHT_PLAN_TEMP
+                FLIGHT_PLAN[NUMBER] = FLIGHT_PLAN_TEMP
                 NUMBER = NUMBER + 1
+            print(FLIGHT_PLAN)
+            print(FLIGHT_PLAN_TEMP)
+            print(FLIGHT_PLAN_INDEX)
+            time.sleep(10)
             os.system("cls")
             CALLSIGN = input("CALLSIGN = ").upper()
             STAND = input("STAND = ").upper()
@@ -58,16 +64,6 @@ while run == True:
             print(f"Cleared to {ARRIVAL}, {SID} departure, runway {RUNWAY}, squawk {SQUAWK}, {CALLSIGN}")
             print("")
             mini_choice = input("---PRESS--ENTER--TO--CONTINUE---")
-            while mini_choice != 1:
-                print("")
-                print("(1) Readback Correct")
-                print("(2) Change Something")
-                mini_choice = int(input("= "))
-                if mini_choice == 2:
-                    print("")
-                    SID = input("DEPARTURE SID = ").upper()
-                    RUNWAY = (input("RUNWAY = ")).upper()
-                    SQUAWK = int(input("SQUAWK = ")).upper()
             print("")
             print(f"Report when ready, {CALLSIGN}")
             print("")
@@ -154,21 +150,34 @@ while run == True:
 
     while stage == "Depature and climbing on the SID":
         os.system ("cls")
-        FL = ("Flight level = ").upper()
+        FL = int(input("Flight level = "))
         print("")
         print(f"{DEPARTURE} Aproach, Good day, {CALLSIGN}, {SID} departure, passing FL{FL}")
         print("")
-        TARGETFL = ("CLIMB TO FL = ")
+        TARGETFL = int(input("CLIMB TO FL = "))
         print("")
         print (f"Climb FL{TARGETFL}, {CALLSIGN}")
         print("")
         RADARNM = input("REGION RADAR NAME = ").upper()
         RADARFRQ = input("RADAR FREQUENCY = ").upper()
         print("")
-        input("--PRESS--ENTER--TO--CONTINUE---")
+        
+        stage == "Radar"
         os.system("cls")
-
-        print(f"{RADARNM} Radar, good day, {CALLSIGN}, passing FL{FL} for {TARGETFL}")
+    while stage == "Radar":
+        FLIGHT_PLAN_INBOUND = FLIGHT_PLAN[GLOBAL_FLIGHT_PLAN_INDEX + 1]
+        choice = input("--PRESS--ENTER--TO--CONTINUE---")
+        while choice != 2:
+                print(f"Current = {FLIGHT_PLAN[GLOBAL_FLIGHT_PLAN_INDEX]}")
+                print(f"Inbound = {FLIGHT_PLAN_INBOUND}")
+                print("")
+                print("(1) Next Waypoint")
+                print("(2) Continue")
+                choice = int(input("= "))
+                if choice == 1:
+                    GLOBAL_FLIGHT_PLAN_INDEX = GLOBAL_FLIGHT_PLAN_INDEX + 1
+                    choice = 0
+        print(f"{RADARNM} Radar, good day, {CALLSIGN}, passing FL{FL} for {TARGETFL}, inbound {FLIGHT_PLAN_INBOUND}")
 
         
     
