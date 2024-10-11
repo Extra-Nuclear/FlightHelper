@@ -90,6 +90,8 @@ while run == True:
     while stage == "Taxi":
         print(f"{CALLSIGN}, Request Taxi")
         ROUTE = input("ROUTE: ")
+        HOLDINGPOINT = input("HOLDING POINT = ")
+        print (f" Taxi Holding point Runway {RUNWAY} {HOLDINGPOINT} {ROUTE} {CALLSIGN}") # what is the S7 in the Guide? O
         print (f" Taxi Holding point Runway {RUNWAY} {ROUTE} {CALLSIGN}")
         # what is the S7 in the Guide?, [O]
         # the holding point [C]
@@ -103,7 +105,11 @@ while run == True:
         print(f"Switch to {TOWERFRQ}")
         input("---PRESS--ENTER--TO--CONTINUE---")
         #give them time to chaange [O]
-        print(f"{DEPARTURE} Tower, Good day {CALLSIGN} at {RUNWAY}")
+        print(f"{DEPARTURE} Tower, Good day {CALLSIGN} at {HOLDINGPOINT}")
+        print(f"Line up and wait Runway {RUNWAY} {CALLSIGN}")
+        input("---PRESS--ENTER--TO--CONTINUE---")
+        print(f"Cleared For take of Runway {RUNWAY} {CALLSIGN}")
+        
 
         
     
