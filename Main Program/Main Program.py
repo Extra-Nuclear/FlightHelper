@@ -19,11 +19,13 @@ print("-"*93)
 
 
 while run == True:
+    while stage == "END PROGRAM":
+        os. _exit()
     while stage == "Clearance":
         print("Stage : C̲l̲e̲a̲r̲a̲n̲c̲e̲ ")
         print("Select an option below:")
-        print("(1) Input Values")
-        print("(2) Generate Text")
+        print("(1) Start - Input Values")
+        print("(2) Quit - Exit the Program")
         choice = int(input("= "))
         os.system("cls")
 
@@ -33,18 +35,12 @@ while run == True:
             DEPARTURE = input("DEPARTURE = ").upper()
             ARRIVAL = input("ARRIVAL = ").upper()
             INFO = input("ATIS INFO = ").upper()
-            #I have put freqencys in when the ACT gives them to the pilot O
+            input("---PRESS--ENTER--TO--CONTINUE---")
             os.system("cls")
-           
-
-
-        elif choice == 2:
             print(f"{DEPARTURE} Delivery, good day, {CALLSIGN} at stand {STAND}, with information {INFO}, requesting clearance to {ARRIVAL}")
             SID = input("DEPARTURE SID = ")
             RUNWAY = (input("RUNWAY = ")).upper()
             SQUAWK = int(input("SQUAWK = "))
-            #does this need to be an int? or would it work better as a string?, [O]
-            #INT as squawk is just numbers, ATC frequency should be Float, [C]
             print(f"Cleared to {ARRIVAL}, {SID} departure, runway {RUNWAY}, squawk {SQUAWK}, {CALLSIGN}")
             mini_choice = input("---PRESS--ENTER--TO--CONTINUE---")
             while mini_choice != 1:
@@ -52,12 +48,15 @@ while run == True:
                 print("(2) Change Something")
                 mini_choice = int(input("-> "))
                 if mini_choice == 2:
-                    SID = input("DEPARTURE SID = ")
+                    SID = input("DEPARTURE SID = ").upper()
                     RUNWAY = (input("RUNWAY = ")).upper()
-                    SQUAWK = int(input("SQUAWK = "))
+                    SQUAWK = int(input("SQUAWK = ")).upper()
             print(f"Report when ready, {CALLSIGN}")
-            input("---PRESS--ENTER--TO--CONTINUE---")
+            input("--PRESS--ENTER--FOR--NEXT--STAGE---")
             stage = "Push & Start"
+        
+        elif choice == 2:
+            stage = "END PROGRAM"
 
 
     while stage == "Push & Start":
@@ -66,8 +65,8 @@ while run == True:
         print (f"Runway = {RUNWAY} | Squawk = {SQUAWK} | SID = {SID}")
         print("")
         print (f"{CALLSIGN}, Fully ready")
-        QNH = input("QNH = ")
-        GROUNDFRQ = input("GROUND FREQUENCY = ")
+        QNH = input("QNH = ").upper()
+        GROUNDFRQ = input("GROUND FREQUENCY = ").upper()
         print(f"QNH {QNH}, information {INFO}, Ground on {GROUNDFRQ}, {CALLSIGN}")
         print("(Switch to Ground Frequency)")
         input("---PRESS--ENTER--TO--CONTINUE---")
@@ -77,7 +76,7 @@ while run == True:
             print("(2) Yes Push Direction")  
             mini_choice = int(input("= "))
             if mini_choice == 2:
-                PSH_DREC = input("PUSH DIRECTION = ")
+                PSH_DREC = input("PUSH DIRECTION = ").upper()
                 print (f"Startup and pushback approved, facing {PSH_DREC}, {CALLSIGN}")
                 push_done = True
             if mini_choice == 1:
@@ -89,53 +88,41 @@ while run == True:
 
     while stage == "Taxi":
         print(f"{CALLSIGN}, Request Taxi")
-        ROUTE = input("ROUTE: ")
-        HOLDINGPOINT = input("HOLDING POINT = ")
-        print (f" Taxi, Holding point {HOLDINGPOINT}, Runway {RUNWAY}, {ROUTE}, {CALLSIGN}") # what is the S7 in the Guide? O
-        # what is the S7 in the Guide?, [O]
-        # the holding point [C]
+        ROUTE = input("ROUTE: ").upper()
+        HOLDINGPOINT = input("HOLDING POINT = ").upper()
+        print (f" Taxi, Holding point {HOLDINGPOINT}, Runway {RUNWAY}, {ROUTE}, {CALLSIGN}") 
         input("---PRESS--ENTER--TO--CONTINUE---")
         stage = "Line up and Takeoff"
 
     while stage == "Line up and Takeoff":
-        TOWERFRQ = input("TOWER FREQUENCY = ")
-        print(F"Contact Tower on {TOWERFRQ} {CALLSIGN} Bye Bye!")
-        #switch to tower [O]
-        print(f"Switch to {TOWERFRQ}")
+        TOWERFRQ = input("TOWER FREQUENCY = ").upper()
+        print(F"Contact Tower on {TOWERFRQ}, {CALLSIGN}, Bye Bye!")
+        print(f"(Switch to {TOWERFRQ})")
+
         input("---PRESS--ENTER--TO--CONTINUE---")
 
-
-        #give them time to chaange [O]
-        print(f"{DEPARTURE} Tower, Good day {CALLSIGN} at {HOLDINGPOINT}")
-        print(f"Line up and wait Runway {RUNWAY} {CALLSIGN}")
+        print(f"{DEPARTURE} Tower, Good day, {CALLSIGN} at {HOLDINGPOINT}")
+        print(f"Line up and wait Runway {RUNWAY}, {CALLSIGN}")
         input("---PRESS--ENTER--TO--CONTINUE---")
-        print(f"Cleared For take of Runway {RUNWAY} {CALLSIGN}")
+        print(f"Cleared For take of, Runway {RUNWAY}, {CALLSIGN}")
 
         input("---PRESS--ENTER--TO--CONTINUE---")
 
         stage = "Depature and climbing on the SID"
+
+
     while stage == "Depature and climbing on the SID":
         os.system ("cls")
-        FL = ("Flight level = ")
-        print(f"{DEPARTURE} Aporoch  Good day {CALLSIGN} {SID} passing FL{FL}")
+        FL = ("Flight level = ").upper()
+        print(f"{DEPARTURE} Aporoch, Good day, {CALLSIGN}, {SID}, passing FL{FL}")
         TARGETFL = ("TARGET FL")
-        print (f"Climb FL{TARGETFL} {CALLSIGN}")
-        RADARST = input("REGION RADAR = ")
-        RADARFRQ = input("RADAR FREQUENCY = ")
+        print (f"Climb FL{TARGETFL}, {CALLSIGN}")
+        RADARST = input("REGION RADAR = ").upper()
+        RADARFRQ = input("RADAR FREQUENCY = ").upper()
         input("---PRESS--ENTER--TO--CONTINUE---")
 
 
     
-
- 
-
-
-
-
-
-
-
-
 
     run = False
 
