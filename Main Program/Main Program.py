@@ -73,7 +73,8 @@ while run == True:
     while stage == "Taxi":
         print(f"{CALLSIGN}, Request Taxi")
         ROUTE = input("ROUTE: ")
-        print (f" Taxi Holding point Runway {RUNWAY} {ROUTE} {CALLSIGN}") # what is the S7 in the Guide? O
+        HOLDINGPOINT = input("HOLDING POINT = ")
+        print (f" Taxi Holding point Runway {RUNWAY} {HOLDINGPOINT} {ROUTE} {CALLSIGN}") # what is the S7 in the Guide? O
         input("---PRESS--ENTER--TO--CONTINUE---")
         stage = "Line up and Takeoff"
 
